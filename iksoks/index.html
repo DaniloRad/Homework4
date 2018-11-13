@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    body {
+        color:whitesmoke;
+        background-image: url('bg.jpg');
+        background-repeat: repeat-x;
+    }
+
+.tabela {
+    box-sizing: border-box;
+    width: 40vh;
+    height: 40vh;
+    color: red;
+    background-color: transparent;
+    margin: auto;
+    display: block;
+    line-height: 15vh;
+}
+.ja {    width: 33%;
+    height: 33%;
+    float: left;
+    box-sizing: border-box;
+    font-size: 50px;
+    text-align: center;
+
+}
+h1{
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+.ja:nth-child(2) {
+
+    border-left: 2px solid goldenrod;
+    border-right: 2px solid goldenrod;
+
+}
+.ja:nth-child(4) {
+    border-top: 2px solid goldenrod;
+    border-bottom: 2px solid goldenrod;
+}
+.ja:nth-child(6) {
+    border-top: 2px solid goldenrod;
+    border-bottom: 2px solid goldenrod;
+}
+.ja:nth-child(8) {
+    border-left: 2px solid goldenrod;
+    border-right: 2px solid goldenrod;
+}
+.ja:nth-child(5) {
+    border: 2px solid goldenrod;
+}
+</style>
+</head>
+<body onload="">
+
+    <h1> X/O GAME</h1>
+<div class="tabela">
+
+
+<div class="ja" name="nema">
+
+    </div>
+    <div class="ja" name="nema">
+
+        </div>
+        <div class="ja" name="nema">
+
+
+            </div>
+            <div class="ja" name="nema">
+
+
+
+                </div>
+                <div class="ja" name="nema">
+
+
+
+
+                    </div>
+                    <div class="ja" name="nema">
+
+
+
+
+                        </div>
+                        <div class="ja" name="nema">
+
+
+
+
+                            </div>
+                            <div class="ja" name="nema">
+
+                                </div>
+                                <div class="ja" name="nema">
+
+                                    </div>
+    
+
+    
+    
+
+
+
+</div> 
+<script>
+//odje render
+var parnepar=true;
+var nemapobjednika=false;
+    var kraj =setInterval(renderovanje,400);
+
+  
+    function renderovanje() {
+//horizontalno
+        //da li su isti innerhtml u 3 diva
+     console.log("ren")
+
+var a=document.getElementsByClassName("ja")[0];
+var b=document.getElementsByClassName("ja")[1];
+var c=document.getElementsByClassName("ja")[2];
+
+if ((a.innerHTML==b.innerHTML) && (b.innerHTML===c.innerHTML)&& (a.innerHTML.replace(/\s/g, '').length)){
+if(a.innerHTML==="X") {    alert("Pobjednik je plejer 1 ");} 
+else {
+    alert("Pobjednik je plejer 2");
+}    nemapobjednika=true;
+
+
+}
+else {
+}
+var d=document.getElementsByClassName("ja")[3];
+var e=document.getElementsByClassName("ja")[4];
+var f=document.getElementsByClassName("ja")[5];
+if ((d.innerHTML==e.innerHTML) && (e.innerHTML===f.innerHTML) && (d.innerHTML.replace(/\s/g, '').length)) {
+if(a.innerHTML==="X") {    alert("Pobjednik je plejer 1 ");} 
+else {
+    alert("Pobjednik je plejer 2");
+}    nemapobjednika=true;
+
+
+}
+var g=document.getElementsByClassName("ja")[6];
+var h=document.getElementsByClassName("ja")[7];
+var l=document.getElementsByClassName("ja")[8];
+if ((g.innerHTML==h.innerHTML) && (h.innerHTML===l.innerHTML)&& (g.innerHTML.replace(/\s/g, '').length)) {
+if(a.innerHTML==="X") {    alert("Pobjednik je plejer 1 ");} 
+else {
+    alert("Pobjednik je plejer 2");
+}    nemapobjednika=true;
+
+
+}
+
+
+//vertikalno
+var a=document.getElementsByClassName("ja")[0];
+var b=document.getElementsByClassName("ja")[3];
+var c=document.getElementsByClassName("ja")[6];
+if ((a.innerHTML==b.innerHTML) && (a.innerHTML===c.innerHTML)&& (a.innerHTML.replace(/\s/g, '').length)) {
+    console.log("eo")
+if(a.innerHTML==="X") {    alert("Pobjednik je plejer 1 ");} 
+else {
+    alert("Pobjednik je plejer 2");
+}    nemapobjednika=true;
+
+
+}
+var d=document.getElementsByClassName("ja")[1];
+var e=document.getElementsByClassName("ja")[4];
+var f=document.getElementsByClassName("ja")[7];
+if ((d.innerHTML==e.innerHTML) && (e.innerHTML===f.innerHTML)&& (d.innerHTML.replace(/\s/g, '').length)) {
+if(a.innerHTML==="X") {    alert("Pobjednik je plejer 1 ");} 
+else {
+    alert("Pobjednik je plejer 2");
+}    nemapobjednika=true;
+
+
+}
+var g=document.getElementsByClassName("ja")[2];
+var h=document.getElementsByClassName("ja")[5];
+var l=document.getElementsByClassName("ja")[8];
+if ((g.innerHTML==h.innerHTML) && (h.innerHTML===l.innerHTML)&& (g.innerHTML.replace(/\s/g, '').length)) {
+if(a.innerHTML==="X") {    alert("Pobjednik je plejer 1 ");}
+else {
+    alert("Pobjednik je plejer 2");
+}
+nemapobjednika=false;
+
+
+}
+
+
+//diagonale 2
+var a=document.getElementsByClassName("ja")[0];
+var b=document.getElementsByClassName("ja")[4];
+var c=document.getElementsByClassName("ja")[8];
+if ((a.innerHTML==b.innerHTML) && (b.innerHTML===c.innerHTML)&& (a.innerHTML.replace(/\s/g, '').length)) {
+if(a.innerHTML==="X") {    alert("Pobjednik je plejer 1");} 
+else {
+    alert("Pobjednik je plejer 2 ");
+}
+    nemapobjednika=true;
+
+}
+var d=document.getElementsByClassName("ja")[2];
+var e=document.getElementsByClassName("ja")[4];
+var f=document.getElementsByClassName("ja")[6];
+if ((d.innerHTML==e.innerHTML) && (e.innerHTML===f.innerHTML)&& (d.innerHTML.replace(/\s/g, '').length)) {
+if(a.innerHTML==="X") {    alert("Pobjednik je plejer 1");} 
+else {
+    alert("Pobjednik je plejer 2 ");
+}
+    nemapobjednika=true;
+
+}
+if(nemapobjednika) {
+
+      for(let i=0;i<9;i++) {
+
+var a=document.getElementsByClassName("ja")[i];
+
+a.innerHTML="";
+a.setAttribute("name","nema");
+
+
+}
+nemapobjednika=false;
+
+}
+
+if(svakiima() && !nemapobjednika) {
+    for(let i=0;i<9;i++) {
+
+            var a=document.getElementsByClassName("ja")[i];
+            
+            a.innerHTML="";
+            a.setAttribute("name","nema");
+
+    }
+ parnepar=true;
+ 
+}
+
+
+  
+
+
+}
+
+
+
+
+
+    
+
+for (let i=0;i<9;i++) {
+
+
+    var a=document.getElementsByClassName("ja")[i];
+  
+    
+    a.addEventListener("click",crtaj);
+  
+    
+
+}
+
+
+function crtaj () {
+
+    
+    if((parnepar)&& (this.getAttribute("name")!=="ima")) {
+    
+            this.innerHTML="X";
+            this.setAttribute("name","ima");
+        parnepar=false;
+        this.style.color="lightblue";
+
+        }
+    else {
+        
+            if((!parnepar)&& (this.getAttribute("name")!=="ima")) {
+
+                 this.innerHTML="O";
+                 this.setAttribute("name","ima");
+
+            parnepar=true;
+            this.style.color="white";
+
+
+            }
+
+           
+
+    }
+
+
+}
+
+
+function svakiima () {
+    var ima=true;
+
+    for (let i=0;i<9;i++) {
+
+                var a=document.getElementsByClassName("ja")[i];
+                if(a.getAttribute("name")==="nema") {
+                ima=false;
+                break;
+
+            }
+
+
+    }
+    return ima;
+
+}
+
+//ako je svako polje popunjeno onda je kraj igre nerijeseno je
+
+</script>
+</body>
+</html>
