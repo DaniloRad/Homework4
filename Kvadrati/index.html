@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    
+    
+    .sadrzaj {
+            width: 60%;
+            margin: auto;
+            height: 500px;
+        background-color:black;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .kvadrat {
+        position: relative;
+        background-color: darkcyan;
+        width: 100px;
+        height: 50px;
+        margin: 3px;
+            color: white;
+
+    }
+     span::after{
+        content: '×';
+        cursor: pointer;
+        font-size: 20px;
+        color: wheat;
+        background-color:brown;
+
+    }
+    input {
+        width: 95px;
+    }
+
+    #dodaj {
+        font-size: 40px;
+        color: wheat;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body onload="ucitavanje();">
+
+    <div class="sadrzaj">
+
+
+
+        <div id="dodaj" onclick="dodavanje();" >
+
+            +
+
+        </div>
+    </div>
+
+    
+    <script> 
+  
+    function dodavanje() {
+         var parent1=document.getElementsByClassName("sadrzaj")[0];
+console.log("nece");
+        var divss=document.createElement("div");
+                var spann=document.createElement("span");
+                var input=document.createElement("input");
+                input.setAttribute("type","text");
+                divss.appendChild(input);
+                divss.appendChild(spann);
+                divss.classList.add("kvadrat");
+                parent1.appendChild(divss);
+               spann.addEventListener("click",test);
+               input.addEventListener("keyup",provjerainputa);
+
+
+    }
+    function isLetter(string) {
+
+        if(string.length===0) {
+
+return true;
+
+        } 
+        else {
+            if(string.match(/^[a-zA-Z\s]+$/)){
+
+return true;
+
+        }
+        else return false;
+      
+        }
+        
+
+}
+function palindom(string) {
+if(string.length<3) {
+    return false;
+}
+var niz =string.split("");
+var jeste=true;
+j=niz.length-1;
+for (let i=0;i<niz.length;i++) {
+
+    if(niz[i]===niz[j]) {
+
+        jeste=true;
+
+    }
+    else {
+        return false;
+    }
+    j--;
+
+}
+
+return true;
+
+}
+    
+function provjerainputa() {
+
+   var a=this.value;
+   if(!isLetter(a)) {
+       alert("Slovo")
+       this.value=this.value.substring(0,this.value.length-1);
+   }
+   if (palindom(a)===true) {
+       console.log("eo")
+                var a=this.parentElement.innerHTML;
+            alert("jeste palindrom");
+
+
+   }
+
+ 
+ 
+
+
+
+}
+function ucitavanje () {
+
+    var brojkvadratica=prompt("Unesite broj kvadratica!(cifra)");
+        for(let i=0;i<brojkvadratica;i++) {
+
+               dodavanje();
+
+        }
+
+}  
+function test () {
+    var parent1=document.getElementsByClassName("sadrzaj")[0];
+
+
+parent1.removeChild(this.parentElement);
+
+
+
+}
+
+
+        
+        
+        
+    </script>
+</body>
+</html>
